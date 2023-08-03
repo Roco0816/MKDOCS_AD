@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>My Docs</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body class="homepage">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">My Docs</a>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#welcome-to-mkdocs" class="nav-link">Welcome to MkDocs</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#commands" class="nav-link">Commands</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#project-layout-example" class="nav-link">Project layout example</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#kpi-nps-report" class="nav-link">KPI NPS Report</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#july-2023" class="nav-link">July 2023</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#table-of-contents" class="nav-link">Table of contents</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#1-document-goals" class="nav-link">1. Document Goals</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#2-definition-of-the-kpi" class="nav-link">2. Definition of the KPI</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#21-metric-details" class="nav-link">2.1 Metric Details</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#22-nps-definition" class="nav-link">2.2 NPS Definition</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#3-kpi-business-use-cases" class="nav-link">3. KPI Business Use Cases</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#31-key-insights" class="nav-link">3.1 Key Insights</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#4-required-kpi-data-sources" class="nav-link">4. Required KPI Data Sources</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#41-metric-granularity" class="nav-link">4.1 Metric Granularity</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#42-segments-dimensions-filters-slicers" class="nav-link">4.2 Segments (Dimensions /Filters / Slicers)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#43-caveats-clarifications" class="nav-link">4.3 Caveats &amp; Clarifications</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#45-known-issues" class="nav-link">4.5 Known Issues</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#5-data-processing-details" class="nav-link">5. Data Processing Details</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#6-sample-sql-queries" class="nav-link">6. Sample SQL Queries</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#61-use-case-1" class="nav-link">6.1 Use Case 1</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#62-use-case-2" class="nav-link">6.2 Use Case 2</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#63-use-case-3" class="nav-link">6.3 Use Case 3</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#64-use-case-4" class="nav-link">6.4 Use Case 4</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#65-use-case-5" class="nav-link">6.5 Use Case 5</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#66-use-case-6" class="nav-link">6.6 Use Case 6</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#7-report-data-for-reconciliation" class="nav-link">7. Report / Data for Reconciliation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#8-metric-owner-check-list" class="nav-link">8. Metric Owner Check List</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#9-governance" class="nav-link">9. Governance</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#10-data-quality-monitoring" class="nav-link">10. Data Quality &amp; Monitoring</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#101-known-data-quality-issues" class="nav-link">10.1 Known Data Quality Issues</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#102-data-quality-checks" class="nav-link">10.2 Data Quality Checks</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#103-inventory-of-downstream-users" class="nav-link">10.3 Inventory of Downstream Users</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
+<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
+<h2 id="commands">Commands</h2>
+<ul>
+<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
+<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
+<li><code>mkdocs build</code> - Build the documentation site.</li>
+<li><code>mkdocs -h</code> - Print help message and exit.</li>
+</ul>
+<h2 id="project-layout-example">Project layout example</h2>
+<pre><code>mkdocs.yml    # The configuration file.
+docs/
+    index.md  # The documentation homepage.
+    ...       # Other markdown pages, images and other files.
+</code></pre>
+<p><a href="https://www.google.com/url?sa=i&amp;url=https%3A%2F%2Fbrand.autodesk.com%2Fbrand-system%2Flogo%2F&amp;psig=AOvVaw3uZeNJq7-r_3BVMP4cCkjz&amp;ust=1690731812300000&amp;source=images&amp;cd=vfe&amp;opi=89978449&amp;ved=0CBEQjRxqFwoTCNCEsvqgtIADFQAAAAAdAAAAABAE"><img alt="N|Solid" src="https://brand.autodesk.com/app/uploads/2021/04/alternate-logo-1.svg" /></a></p>
+<h1 id="kpi-nps-report">KPI NPS Report</h1>
+<h2 id="july-2023"><em>July 2023</em></h2>
+<h4 id="version-20"><a href="https://github.com/Roco0816/AD-Test">Version 2.0</a></h4>
+<h1 id="table-of-contents">Table of contents</h1>
+<ol>
+<li>Document Goals</li>
+<li>Definition of the KPI
+    2.1 Metric Details
+    2.2 NPS Definition</li>
+<li>KPI Business Use Cases
+    3.1 Key Insights</li>
+<li>Required KPI Data Sources
+    4.1 Metric Granularity
+    4.2 Segments (Dimensions /Filters / Slicers)
+    4.3 Caveats &amp; Clarifications
+    4.4 Known Issues</li>
+<li>Data Processing Details</li>
+<li>Sample SQL Queries
+    6.1 Use Case 1 - To fetch non-EBA Qualtrics IDs per fiscal year
+    6.2 Use Case 2 - To fetch Qualtrics IDs (EBA and non-EBA) per industry
+    6.3 Use Case 3 - To fetch EBA Qualtrics IDs per GEO
+    6.4 Use Case 4 - To calculate overall NPS (EBA and non-EBA)
+    6.5 Use Case 5 - To calculate EBA NPS
+    6.6 Use Case 6 - To connect NPS table with applicable dimensions</li>
+<li>Report / Data for Reconciliation</li>
+<li>Check List for Metric Owner</li>
+<li>Governance</li>
+<li>Data Quality &amp; Monitoring
+    10.1 Known Data Quality Issues
+    10.2 Data Quality Checks
+    10.3 Inventory of Downstream Users</li>
+</ol>
+<h1 id="1-document-goals">1. Document Goals</h1>
+<ul>
+<li>Explain how the Key Performance Indicator (KPI) Net Promotor Score is calculated using SQL</li>
+<li>Communicate a high-level understanding of the metric and how it can be used for leadership and director-levels </li>
+<li>Document the process for technical analysts to understand how to use the data/calculate the KPI as well as the appropriate business context to apply it</li>
+</ul>
+<h1 id="2-definition-of-the-kpi">2. Definition of the KPI</h1>
+<h2 id="21-metric-details">2.1 Metric Details</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric Title</td>
+<td>Net Promoter Score (NPS)</td>
+</tr>
+<tr>
+<td>Metric Short Description</td>
+<td>NPS</td>
+</tr>
+<tr>
+<td>Metric Long Description</td>
+<td>Net Promoter Score</td>
+</tr>
+<tr>
+<td>Metric SME</td>
+<td>Jasson Ji</td>
+</tr>
+<tr>
+<td>Product Owner</td>
+<td>Uddipan</td>
+</tr>
+<tr>
+<td>Documentation Status</td>
+<td>IN PROGESS</td>
+</tr>
+</tbody>
+</table>
+<h2 id="22-nps-definition">2.2 NPS Definition</h2>
+<p>NPS stands for Net Promoter Score, a metric used in customer experience programmes. NPS measures the loyalty of customers to a company. NPS scores are measured with a single question survey and reported with a number from -100 to +100. A higher score is desirable. </p>
+<p><img alt="Total_Qualtrics_ID vs Fiscal_Year" src="https://res.cloudinary.com/dffvrw1wk/image/upload/v1690790058/nps_rrarle.jpg" /></p>
+<h1 id="3-kpi-business-use-cases">3. KPI Business Use Cases</h1>
+<ul>
+<li>Tracking NPS allows us to see how much our customers would recommend our product/service/the company to someone else</li>
+<li>We can track this KPI over periods of time and determine whether customer satisfaction with the product/service is improving or declining</li>
+<li>We can leverage this information to enhance our service and identify strengths for further improvement</li>
+</ul>
+<h2 id="31-key-insights">3.1 Key Insights</h2>
+<ul>
+<li>Achievements:<ul>
+<li>The total number of <strong>survey responses</strong> have <strong>increased</strong> year on year since 2020 from <strong>35 to over 100</strong> in 2023. This is a <strong>positive</strong> result and an <strong>investigation</strong> as to what is working successfully can drive <strong>further results</strong>.</li>
+<li>The <strong>overall EBA NPS</strong> of <strong>60</strong> indicates a <strong>highly positive sentiment</strong> among <strong>employees</strong> who have access to our products or services. </li>
+<li>Leveraging this positive sentiment can contribute to a <strong>positive work environment</strong> and potentially boost employee <strong>engagement and productivity</strong>.</li>
+<li>Engagement in survey reponses is <strong>highest in the architecture industry</strong>.</li>
+<li><strong>Geo_1</strong> has <strong>the highest NPS</strong>, indicating a higher level of <strong>customer loyalty and satisfaction</strong> compared to the other locations.</li>
+</ul>
+</li>
+<li>Improvements:<ul>
+<li>The majority of respondents are <strong>unique customers</strong> with an <strong>unknown industry</strong>. Investigate to identify these industries. </li>
+<li>Improve survey participation and engagement, especially in <strong>construction and product design industries</strong>.</li>
+<li><strong>Geo_3</strong> has <strong>the lowest NPS</strong>, suggesting there is room for improvement in <strong>customer sentiment</strong> in this area.</li>
+<li>An <strong>overall NPS of 35 out of 100</strong> shows signs of improvement to be made in the <strong>product/process/company</strong>.</li>
+<li>We can <strong>leverage NPS tables</strong> to facilitate in-depth <strong>analysis</strong> by exploring <strong>NPS scores</strong> alongside specific customer attributes, gaining insights into <strong>customer feedback</strong> and <strong>loyalty</strong> based on different dimensions.</li>
+</ul>
+</li>
+</ul>
+<h1 id="4-required-kpi-data-sources">4. Required KPI Data Sources</h1>
+<h2 id="41-metric-granularity">4.1 Metric Granularity</h2>
+<ul>
+<li>Qualtrics_ID</li>
+</ul>
+<h2 id="42-segments-dimensions-filters-slicers">4.2 Segments (Dimensions /Filters / Slicers)</h2>
+<ol>
+<li>Country</li>
+<li>Customer Size</li>
+<li>Customer Tenure</li>
+<li>Geo</li>
+<li>Industry Group</li>
+<li>License Compliance ( WIP)</li>
+<li>Named account</li>
+<li>Named Account Group</li>
+<li>Customer Tenure</li>
+<li>Premium ( WIP)</li>
+</ol>
+<h2 id="43-caveats-clarifications">4.3 Caveats &amp; Clarifications</h2>
+<ol>
+<li>
+<p><strong>Not all Qualtrics_id have an account_csn, hence not all qualtrics_id will have an account_name</strong></p>
+<p><strong>Explanation:</strong></p>
+<ul>
+<li>Some survey responses in Qualtrics lack linked customer accounts, possibly due to anonymous or non-customer respondents.</li>
+</ul>
+<p><strong>Impact:</strong></p>
+<ul>
+<li>Because of this, when analyzing the survey data, there may be cases where the "account_name" field is empty or NULL for certain survey responses, while others will have valid account names associated with them.</li>
+</ul>
+<p><strong>Action:</strong></p>
+<ul>
+<li>Filter out non-account holder responses and handle them separately in survey results.</li>
+</ul>
+</li>
+<li>
+<p><strong>Autodesk (ADSK_BUSINESS_SCORE) has its own unique NPS thresholds:</strong></p>
+</li>
+<li>
+<p>"PROMOTER" are anyone who scores between 6-10 </p>
+</li>
+<li>"DETRACTOR" are anyone who scores between 0-3 </li>
+<li>
+<p>"OTHERS" are anyone who scores between 4-5
+<img alt="Total_Qualtrics_ID vs Fiscal_Year" src="https://res.cloudinary.com/dffvrw1wk/image/upload/v1690790156/nps_002_e04bip.jpg" /></p>
+</li>
+<li>
+<p><strong>Some columns exclusively belong to EBA or NON-EBA, hence field EBA_FLAG is crucial for data navigation</strong></p>
+<p><strong>Explanation:</strong></p>
+</li>
+<li>
+<p>Certain columns in the data are specific to either EBA (Employee-Based Access) or NON-EBA. The "EBA_FLAG" column is used to differenciate between these two data types.</p>
+</li>
+<li>
+<p><strong>As of 31/07/2023, about 1850 qualtrics_id have multiple ACCOUNT_CSN mapped to them</strong></p>
+</li>
+<li>
+<p>Some of these CSN's have multiple ACCOUNT_NAME, INDUSTRY &amp; GEO, or multiple values in one of these filters. To ensure consistency, any qualtrics_id with multiple ACCOUNT_CSN will have ACCOUNT_NAME, INDUSTRY, and GEO set to 'UNKNOWN'.</p>
+</li>
+<li>
+<p>This approach helps maintain data clarity and reliability, standardizing the data to 'UNKNOWN' for ambiguous survey responses with multiple possible mappings to different customer accounts or information. It ensures consistent handling during analysis and reporting.</p>
+</li>
+</ol>
+<h2 id="45-known-issues">4.5 Known Issues</h2>
+<p>The metric knowledge is being consolidated, gathering inputs from various experts to ensure a comprehensive understanding and informed decision-making based on combined expertise of the SMEs.</p>
+<h2 id="5-data-processing-details">5. Data Processing Details</h2>
+<p><strong>How to Find the Table(s):</strong>
+1. Go to the Data Warehouse.
+2. Search for the "ENGAGEMENT_SHARED" schema or database.
+3. Look for the tables named:
+   - "X_PUBLISH"
+   - "X_ADSK__MEMBERS"
+   - "NPS_X_ADSK_TEAM_MEMBERS"
+   - "NPS_NON_X_KEY_DRIVER_PRODUCTS"
+   - "NPS_PRODUCTS_ENGMNT"</p>
+<p><strong>Note:</strong> 
+    - Some of these tables have different access roles (X_RO_GROUP), indicating permissions or restrictions on who can access them.
+   - Each dataset will be updated daily at 07:30 UTC.
+   - Some roles require admin rights to access certain tables</p>
+<table>
+<thead>
+<tr>
+<th>Data Warehouse</th>
+<th>Schema/Database</th>
+<th>View/Table</th>
+<th>Roles with Access</th>
+<th>Time Partitions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X_PUBLISH</td>
+<td>ENGAGEMENT_SHARED</td>
+<td>X_ADSK__MEMBERS</td>
+<td>X _RO_GROUP</td>
+<td>Not Applicable</td>
+</tr>
+<tr>
+<td>X_PUBLISH</td>
+<td>ENGAGEMENT_SHARED</td>
+<td>NPS_X _ADSK_TEAM_MEMBERS</td>
+<td>X _RO_GROUP</td>
+<td>Not Applicable</td>
+</tr>
+<tr>
+<td>X_PUBLISH</td>
+<td>ENGAGEMENT_SHARED</td>
+<td>NPS_NON_X_KEY_DRIVER_PRODUCTS</td>
+<td>X _RO_GROUP</td>
+<td>Not Applicable</td>
+</tr>
+<tr>
+<td>X_PUBLISH</td>
+<td>ENGAGEMENT_SHARED</td>
+<td>NPS_PRODUCTS_ENGMNT</td>
+<td>X _RO_GROUP</td>
+<td>Not Applicable</td>
+</tr>
+</tbody>
+</table>
+<h1 id="6-sample-sql-queries">6. Sample SQL Queries</h1>
+<h2 id="61-use-case-1">6.1 Use Case 1</h2>
+<h3 id="to-fetch-non-eba-qualtrics-ids-per-fiscal-year"><em><em>To fetch non-EBA Qualtrics IDs per fiscal year</em></em></h3>
+<p>SQL query:</p>
+<pre><code>select FISCAL_YEAR,
+count(distinct qualtrics_id) as total_qualtrics_id
+from "EIO_PUBLISH"."ENGAGEMENT_SHARED"."NPS_EBA_NON_EBA_SURVEY"
+where EBA_FLAG = 'FALSE'
+group by 1
+</code></pre>
+<h3 id="non-eba-qualtrics-ids-per-fiscal-year">Non-EBA Qualtrics IDs per Fiscal Year</h3>
+<table>
+<thead>
+<tr>
+<th>FISCAL_YEAR</th>
+<th>total_qualtrics_id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2023</td>
+<td>100</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>80</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>50</td>
+</tr>
+<tr>
+<td>2020</td>
+<td>35</td>
+</tr>
+</tbody>
+</table>
+<p>Here is the data in bar chart format:
+<img alt="Total_Qualtrics_ID vs Fiscal_Year" src="https://res.cloudinary.com/dffvrw1wk/image/upload/v1690742152/002_fgcmpv.jpg" /></p>
+<h4 id="table-summary">Table Summary</h4>
+<p>The query helps identify the number of survey responses (Qualtrics IDs) submitted by non-EBA participants for each fiscal year. It focuses on data from a specific table and filters out only the relevant responses before grouping them by fiscal year for analysis. </p>
+<h4 id="table-results">Table Results</h4>
+<p>The total number of survey responses (Qualtrics IDs) have increased year on year since 2020 from 35 to over 100 responses in 2023.</p>
+<h2 id="62-use-case-2">6.2 Use Case 2</h2>
+<h3 id="to-fetch-qualtrics-ids-eba-and-non-eba-per-industry"><em>To fetch Qualtrics IDs (EBA and non-EBA) per industry</em></h3>
+<p>SQL query:</p>
+<pre><code>SELECT INDUSTRY,
+COUNT(DISTINCT QUALTRICS_ID),
+COUNT(DISTINCT account_csn)
+from "EIO_PUBLISH"."ENGAGEMENT_SHARED"."NPS_EBA_NON_EBA_SURVEY"
+GROUP BY INDUSTRY;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>INDUSTRY</th>
+<th>total_qualtrics_id</th>
+<th>total_account_csn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UNKNOWN</td>
+<td>1850</td>
+<td>3700</td>
+</tr>
+<tr>
+<td>CONSTRUCTION</td>
+<td>1500</td>
+<td>3000</td>
+</tr>
+<tr>
+<td>ARCHITECTURE</td>
+<td>1250</td>
+<td>1500</td>
+</tr>
+<tr>
+<td>PRODUCT DESIGN</td>
+<td>900</td>
+<td>1800</td>
+</tr>
+</tbody>
+</table>
+<p>Here is the data in bar chart format:
+<img alt="Total_Qualtrics_ID vs Fiscal_Year" src="https://res.cloudinary.com/dffvrw1wk/image/upload/v1690742564/003_gnaube.jpg" /></p>
+<h4 id="table-summary_1">Table Summary</h4>
+<p>The query helps identify the number of survey responses (Qualtrics IDs) and the number of unique customers (account_csn) for both EBA and non-EBA participants, categorized by different industries. It allows us to understand how many survey responses and unique customers are associated with each industry.</p>
+<h4 id="table-results_1">Table Results</h4>
+<p>Engagement and feedback vary by industry. The majority of respondents are unique customers with an unknown industry. Investigate to identify these industries. Improve survey participation and engagement, especially in construction and product design industries.</p>
+<h2 id="63-use-case-3">6.3 Use Case 3</h2>
+<h3 id="to-fetch-eba-qualtrics-ids-per-geo"><em>To fetch EBA Qualtrics IDs per GEO</em></h3>
+<p>SQL query:</p>
+<pre><code>with count_rows as
+(select count(distinct qualtrics_id) as qualtrics_count
+from
+"EIO_PUBLISH"."ENGAGEMENT_SHARED"."NPS_EBA_NON_EBA_SURVEY" )
+--where powerbi_geo = ''_)
+,total_promoters as (
+Select count(distinct qualtrics_id) as promoters_count from
+"EIO_PUBLISH"."ENGAGEMENT_SHARED"."NPS_EBA_NON_EBA_SURVEY" where score &gt;='9')
+,total_detractors as (
+Select count(distinct qualtrics_id) as detractors_count from
+"EIO_PUBLISH"."ENGAGEMENT_SHARED"."NPS_EBA_NON_EBA_SURVEY" where score &lt;='6')
+select promoters_perc - detractors_perc
+from (
+select promoters_count/qualtrics_count as promoters_perc, detractors_count/qualtrics_count as detractors_perc
+from count_rows,total_promoters,total_detractors
+)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>GEO</th>
+<th>Total EBA Qualtrics IDs</th>
+<th>Promoters Count</th>
+<th>Detractors Count</th>
+<th>NPS (Promoters - Detractors)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Geo_1</td>
+<td>1200</td>
+<td>800</td>
+<td>150</td>
+<td>650</td>
+</tr>
+<tr>
+<td>Geo_2</td>
+<td>850</td>
+<td>400</td>
+<td>70</td>
+<td>330</td>
+</tr>
+<tr>
+<td>Geo_3</td>
+<td>500</td>
+<td>250</td>
+<td>50</td>
+<td>200</td>
+</tr>
+</tbody>
+</table>
+<p>Here is the data in bar chart format:
+<img alt="Total_Qualtrics_ID vs Fiscal_Year" src="https://res.cloudinary.com/dffvrw1wk/image/upload/v1690743312/004_zq4bg9.jpg" /></p>
+<h4 id="table-summary_2">Table Summary</h4>
+<ul>
+<li>"GEO" represents the geographic location categories for which the NPS is calculated.</li>
+<li>"Total EBA Qualtrics IDs" shows the total count of EBA Qualtrics survey responses for each geographic location.</li>
+<li>"Promoters Count" displays the count of Promoters (survey responses with a score of 9 or 10) in each GEO.</li>
+<li>"Detractors Count" shows the count of Detractors (survey responses with a score of 0 to 6) in each GEO.</li>
+<li>"NPS (Promoters - Detractors)" calculates the Net Promoter Score for each GEO by subtracting the percentage of Detractors from the percentage of Promoters.</li>
+</ul>
+<p>Each row in the table represents a different GEO category, and the corresponding columns contain the relevant information for that category. This tabular representation facilitates easy comparison of NPS values across different geographic locations, allowing for identification of regions with higher or lower levels of customer sentiment and loyalty.</p>
+<h4 id="table-results_2">Table Results</h4>
+<ul>
+<li>Geo_1 has 1200 EBA Qualtrics survey responses, with 800 promoters and 150 detractors, resulting in an NPS of 650.</li>
+<li>Geo_2 has 850 EBA Qualtrics survey responses, with 400 promoters and 70 detractors, resulting in an NPS of 330.</li>
+<li>Geo_3 has 500 EBA Qualtrics survey responses, with 250 promoters and 50 detractors, resulting in an NPS of 200.</li>
+</ul>
+<p>Overall, Geo_1 has the highest NPS, indicating a higher level of customer loyalty and satisfaction compared to the other locations. Geo_3 has the lowest NPS, suggesting there is room for improvement in customer sentiment in this area.</p>
+<h2 id="64-use-case-4">6.4 Use Case 4</h2>
+<h3 id="to-calculate-overall-nps-eba-and-non-eba"><em>To calculate overall NPS (EBA and non-EBA)</em></h3>
+<p>SQL query:</p>
+<pre><code>with count_rows as
+(select count(distinct qualtrics_id) as qualtrics_count
+from
+"EIO_PUBLISH"."ENGAGEMENT_SHARED"."NPS_EBA_NON_EBA_SURVEY" )
+,total_promoters as (
+Select count(distinct qualtrics_id) as promoters_count from
+"EIO_PUBLISH"."ENGAGEMENT_SHARED"."NPS_EBA_NON_EBA_SURVEY" where score &gt;='9')
+,total_detractors as (
+Select count(distinct qualtrics_id) as detractors_count from
+"EIO_PUBLISH"."ENGAGEMENT_SHARED"."NPS_EBA_NON_EBA_SURVEY" where score &lt;='6')
+select promoters_perc - detractors_perc as overall_nps
+from (
+select promoters_count/qualtrics_count as promoters_perc, detractors_count/qualtrics_count as detractors_perc
+from count_rows,total_promoters,total_detractors
+)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Overall NPS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>35</td>
+</tr>
+</tbody>
+</table>
+<h4 id="table-summary_3">Table Summary</h4>
+<ul>
+<li>"Overall NPS" represents the calculated Net Promoter Score for both EBA (Employee-Based Access) and non-EBA Qualtrics survey responses combined.</li>
+<li>The table contains a single row, and the value "35" indicates the overall Net Promoter Score resulting from the analysis.</li>
+<li>The overall NPS is derived by subtracting the percentage of Detractors from the percentage of Promoters, considering both EBA and non-EBA responses.</li>
+<li>This score provides an assessment of the overall sentiment and loyalty of all survey participants across the entire dataset.</li>
+</ul>
+<h4 id="table-result">Table result</h4>
+<p>An NPS (Net Promoter Score) of 35 means that the overall sentiment of customers towards a company, product, or service is positive but has room for improvement. The NPS is measured on a scale from -100 to +100. It shows that there are more promoters than detractors, but there is still room for improvement to further increase customer satisfaction and loyalty.</p>
+<h2 id="65-use-case-5">6.5 Use Case 5</h2>
+<h3 id="to-calculate-eba-nps"><em>To calculate EBA NPS</em></h3>
+<p>SQL query:</p>
+<pre><code>with count_rows as
+(select count(distinct qualtrics_id) as qualtrics_count
+from
+"EIO_PUBLISH"."ENGAGEMENT_SHARED"."NPS_EBA_NON_EBA_SURVEY" where EBA_FLAG = 'TRUE')
+,total_promoters as (
+Select count(distinct qualtrics_id) as promoters_count from
+"EIO_PUBLISH"."ENGAGEMENT_SHARED"."NPS_EBA_NON_EBA_SURVEY"
+where score &gt;='9' AND EBA_FLAG = 'TRUE')
+,total_detractors as (
+Select count(distinct qualtrics_id) as detractors_count from
+"EIO_PUBLISH"."ENGAGEMENT_SHARED"."NPS_EBA_NON_EBA_SURVEY"
+where score &lt;='6' AND EBA_FLAG = 'TRUE')
+select promoters_perc - detractors_perc as overall_eba_nps
+from (
+select promoters_count/qualtrics_count as promoters_perc, detractors_count/qualtrics_count as detractors_perc
+from count_rows,total_promoters,total_detractors
+)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Overall EBA NPS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>60</td>
+</tr>
+</tbody>
+</table>
+<h4 id="table-summary_4">Table Summary</h4>
+<ul>
+<li>"Overall EBA NPS" represents the calculated Net Promoter Score for EBA (Employee-Based Access) Qualtrics survey responses.</li>
+<li>The table contains a single row, and the value "60" indicates the EBA-specific Net Promoter Score resulting from the analysis.</li>
+<li>The EBA NPS is derived by subtracting the percentage of Detractors from the percentage of Promoters, considering only EBA responses.</li>
+<li>This score provides an assessment of customer sentiment and loyalty specifically for Employee-Based Access survey participants.</li>
+</ul>
+<h4 id="table-results_3">Table results</h4>
+<ul>
+<li>An overall EBA (Employee-Based Access) NPS (Net Promoter Score) of 60 means that the sentiment of employees who have access to a company's products or services is highly positive. </li>
+<li>It indicates that a significant majority of employees who have access to the company's products or services are promoters. This suggests a high level of employee satisfaction and loyalty, which is beneficial for the company as it indicates a positive work environment and can lead to higher employee engagement and productivity.</li>
+</ul>
+<h2 id="66-use-case-6">6.6 Use Case 6</h2>
+<h3 id="to-connect-nps-table-with-applicable-dimensions"><em>To connect NPS table with applicable dimensions</em></h3>
+<p>SQL query:</p>
+<pre><code>WITH ACCOUNT_CED AS (
+SELECT
+-- site location identifying information
+t_map.account_csn as ACCOUNT_CSN
+,SITE_TYPE
+,SITE_COUNTRY_NAME
+,SITE_GEO
+,SITE_INDUSTRY_SEGMENT
+,SITE_INDUSTRY_GROUP
+,PARTNER_SITE_TYPE
+,SITE_SALES_REGION
+,SITE_TYPE
+,SITE_NAMED_ACCOUNT_GROUP_STATIC
+,CORPORATE_CUSTOMER_SIZE_STATIC
+from adp_publish.account_optimized.account_edp_optimized account_ced
+inner join adp_publish.account_optimized.transactional_csn_mapping_optimized t_map
+on t_map.site_uuid_csn = account_ced.site_uuid_csn
+)
+SELECT SCORE, ACCOUNT_CED.*
+"EIO_PUBLISH"."ENGAGEMENT_SHARED"."NPS_EBA_NON_EBA_SURVEY" SURVEY
+LEFT JOIN ACCOUNT_CED ON
+SURVEY.ACCOUNT_CSN = ACCOUNT_CED.ACCOUNT_CSN
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>SCORE</th>
+<th>ACCOUNT_CSN</th>
+<th>SITE_TYPE</th>
+<th>SITE_COUNTRY_NAME</th>
+<th>SITE_GEO</th>
+<th>SITE_INDUSTRY_SEGMENT</th>
+<th>SITE_INDUSTRY_GROUP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td>CSN_001</td>
+<td>Type_A</td>
+<td>Country_X</td>
+<td>Geo_1</td>
+<td>Segment_1</td>
+<td>Group_A</td>
+</tr>
+<tr>
+<td>7</td>
+<td>CSN_002</td>
+<td>Type_B</td>
+<td>Country_Y</td>
+<td>Geo_2</td>
+<td>Segment_2</td>
+<td>Group_B</td>
+</tr>
+<tr>
+<td>8</td>
+<td>CSN_003</td>
+<td>Type_C</td>
+<td>Country_Z</td>
+<td>Geo_3</td>
+<td>Segment_3</td>
+<td>Group_C</td>
+</tr>
+</tbody>
+</table>
+<h4 id="table-summary_5">Table Summary</h4>
+<ul>
+<li>"SCORE" represents the Net Promoter Score for each survey response.</li>
+<li>"ACCOUNT_CSN" is the customer account identifier that connects the NPS survey responses to specific customers in the "ACCOUNT_CED" result set.</li>
+<li>Other columns like "SITE_TYPE," "SITE_COUNTRY_NAME," "SITE_GEO," "SITE_INDUSTRY_SEGMENT," "SITE_INDUSTRY_GROUP," and more represent site location and customer attributes from the "ACCOUNT_CED" result set.</li>
+<li>The table combines NPS data with relevant dimensions from "ACCOUNT_CED" using a LEFT JOIN. This links each NPS survey response to its corresponding customer and includes additional information about site location and industry segment.</li>
+</ul>
+<h4 id="table-result_1">Table Result</h4>
+<p>We can leverage NPS tables to facilitate in-depth analysis by exploring NPS scores alongside specific customer attributes, gaining insights into customer feedback and loyalty based on different dimensions.</p>
+<h2 id="7-report-data-for-reconciliation">7. Report / Data for Reconciliation</h2>
+<ul>
+<li>Sales Transactions</li>
+<li>Software Modules</li>
+<li>Software Product Updates</li>
+<li>Software Product Usage</li>
+<li>Software Product Integration</li>
+<li>Customer support tickets</li>
+</ul>
+<h2 id="8-metric-owner-check-list">8. Metric Owner Check List</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Item</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Is the metric defined and used consistently across ADSK?</td>
+<td>Based on the fact of having multiple SME's for this metric, this needs to be checked and agreed upon for a standardised approach going forward</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Has this metric been signed off and approved by identified stakeholders?</td>
+<td>Yes, the metric has been reviewed and approved by relevant stakeholders to ensure its accuracy and appropriateness for decision-making.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Has the metric gone through spot checks, checks for edge cases, and peer-level review?</td>
+<td>Yes, the metric has undergone spot checks, edge case analysis, and review by peers to verify its accuracy and reliability.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Is all logic defined and stored outside of a dashboard?</td>
+<td>Yes, the logic and calculations for the metric are documented and stored separately from the dashboard to ensure consistency and maintainability.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Is the metric accessible and available in ADP-Hive (where applicable)?</td>
+<td>Yes, the metric is accessible and available in ADP-Hive for relevant teams to access and analyze the data.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Is the metric accessible and available in ADP Snowflake (where applicable)?</td>
+<td>Yes, the metric is accessible and available in ADP Snowflake for relevant teams to access and analyze the data.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Do you have a process for proactively communicating changes and known issues?</td>
+<td>Yes, there is a process in place to proactively communicate any changes to the metric's definition or data sources, as well as any known issues that may impact its accuracy or availability.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Have you considered impacts to external parties such as partners/customers?</td>
+<td>Yes, potential impacts on external parties, including partners and customers, have been taken into account to ensure that the metric's results are relevant and reliable for all stakeholders.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="9-governance">9. Governance</h2>
+<p>This is for any version updates to how the metric is defined.
+| Version | Start date | End date | Description of Change/Update | Comments |
+| ------ | ------ | ------ | ------ | ------ |
+| 1.0 | 06 Feb 2023 | 30 July 2023 | Metric documentation available through KPI Simplification Initiative.| This metric was available prior to this start date, but the date reflects when this logic documentation was created for KPI Simplification.|
+| 2.0| 31 July 2023 | - | Introduced robust workflow for metric calculation. | Updated how the metric is calculated to enhance the accuracy of the NPS metric.</p>
+<h1 id="10-data-quality-monitoring">10. Data Quality &amp; Monitoring</h1>
+<h2 id="101-known-data-quality-issues">10.1 Known Data Quality Issues</h2>
+<ol>
+<li>Not all Qualtrics_id have an account_csn, hence not all qualtrics_id will have an account_name</li>
+<li>For ADSK_BUSINESS_SCORE the NPS threshold is unusual, it's FY21_ADSK_BUSINESS_SCORE &gt;= 6 THEN 'PROMOTER' WHEN
+FY21_ADSK_BUSINESS_SCORE &lt;= 3 THEN 'DETRACTOR' for all others when SCORE &lt;= 3 then Detractor and
+SCORE &gt;= 9 then Promoter</li>
+<li>As of 31/07/2023, About 1850 qualtrics_id have multiple ACCOUNT_CSN mapped to them, some of these CSN's have either have multiple ACCOUNT_NAME, INDUSTRY &amp; GEO or multiple values in one of these filters, so in order to ensure consistency, any qualtrics_id with multiple ACCOUNT_CSN will have ACCOUNT_NAME, INDUSTRY and GEO set to 'UNKNOWN'</li>
+</ol>
+<h2 id="102-data-quality-checks">10.2 Data Quality Checks</h2>
+<ul>
+<li>Unique fields<ul>
+<li>QUALTRICS_ID</li>
+</ul>
+</li>
+<li>Not null fields:<ul>
+<li>QUALTRICS_ID</li>
+<li>CURRENT_FY_FLAG</li>
+<li>DT</li>
+<li>EBA_FLAG</li>
+</ul>
+</li>
+</ul>
+<p>• Accepted value testing:
+| Fields | Max Value | Min Value |
+| ------ | ------ | ------ |
+| ACCOUNT_TEAMS_SCORE | 11 | 0 |
+| ADSK_ABILITY_PROD_LIC_SCORE | 11 | 0 |
+| ADSK_BUSINESS_SCORE | 9 | 0 |
+| ADSK_INTEGRITY_SCORE | 11 | 0 |
+| HIGH_QUALITY_PRODUCT_SCORE | 11 | 0 |
+| PROD_SVC_COMPARED_SCORE | 11 | 0 |
+| PROD_SVC_SCORE | 11 | 0 |
+| SME_ACCESS_SCORE | 11 | 0 |
+| SCORE | 11 | 0 |</p>
+<h2 id="103-inventory-of-downstream-users">10.3 Inventory of Downstream Users</h2>
+<table>
+<thead>
+<tr>
+<th>Report / Process Title</th>
+<th>Report / Process Description</th>
+<th>Link to More Details</th>
+<th>Consumers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NPS dashboard</td>
+<td>This is a tool to check how likely customers are on recommending Autodesk, or in other words, how happy they are with Autodesk at the moment or historically depending on the amount of replied surveys.</td>
+<td><a href="https://www.autodesk.eu/">Link</a></td>
+<td>CSM (Customer Success Management) team &amp; SP (Sales and Product) organizations</td>
+</tr>
+<tr>
+<td>Sales Performance Report</td>
+<td>This report provides insights into the sales performance of Autodesk products. It includes information on sales revenue, trends, and key performance indicators.</td>
+<td><a href="https://www.autodesk.eu/">Link</a></td>
+<td>Sales and Marketing teams</td>
+</tr>
+<tr>
+<td>Product Usage</td>
+<td>This system tracks and manages Autodesk's module usage, including license levels, license availability, and orders. It helps optimize license control and ensures efficient supply chain management.</td>
+<td><a href="https://www.autodesk.eu/">Link</a></td>
+<td>Supply Chain and Operations teams</td>
+</tr>
+<tr>
+<td>Customer Support Tickets</td>
+<td>This report analyzes customer support tickets to identify common issues and trends. It helps improve customer service and product enhancements based on customer feedback and pain points.</td>
+<td><a href="https://www.autodesk.eu/">Link</a></td>
+<td>Customer Support and Product Development teams</td>
+</tr>
+<tr>
+<td>Governance</td>
+<td>This is for any version updates to how the metric is defined.</td>
+<td><a href="https://www.autodesk.eu/">Link</a></td>
+<td>Metrics Team and Governance Committee</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://travis-ci.org/joemccann/dillinger"><img alt="Build Status" src="https://brand.autodesk.com/app/uploads/2021/04/primary-logo-1.svg" /></a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js"></script>
+        <script src="search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.5.2
+Build Date UTC : 2023-08-03 15:03:05.912273+00:00
+-->
