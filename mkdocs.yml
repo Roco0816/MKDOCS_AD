@@ -1,2 +1,3 @@
-site_name: My Docs
-docs_dir: site
+site_dir: site
+site_name: Index
+theme: lux

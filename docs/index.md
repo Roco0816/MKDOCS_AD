@@ -1,60 +1,34 @@
-# Welcome to MkDocs
-
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
-
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout example
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
-
-
 [![N|Solid](https://brand.autodesk.com/app/uploads/2021/04/alternate-logo-1.svg)](https://www.google.com/url?sa=i&url=https%3A%2F%2Fbrand.autodesk.com%2Fbrand-system%2Flogo%2F&psig=AOvVaw3uZeNJq7-r_3BVMP4cCkjz&ust=1690731812300000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNCEsvqgtIADFQAAAAAdAAAAABAE)
 # KPI NPS Report
 ## _July 2023_
-#### [Version 2.0](https://github.com/Roco0816/AD-Test)
+#### [Version 3.0](https://github.com/Roco0816/AD-Test)
 
-# Table of contents
+## 1. Key Insights
+- ![Total_Qualtrics_ID vs Fiscal_Year](https://res.cloudinary.com/dffvrw1wk/image/upload/v1690742152/002_fgcmpv.jpg)
+- ![Total_Qualtrics_ID vs Fiscal_Year](https://res.cloudinary.com/dffvrw1wk/image/upload/v1690742564/003_gnaube.jpg)
+- ![Total_Qualtrics_ID vs Fiscal_Year](https://res.cloudinary.com/dffvrw1wk/image/upload/v1690743312/004_zq4bg9.jpg)
+ - Achievements:
+    - The total number of **survey responses** have **increased** year on year since 2020 from **35 to over 100** in 2023. This is a **positive** result and an **investigation** as to what is working successfully can drive **further results**.
+    -  The **overall EBA NPS** of **60** indicates a **highly positive sentiment** among **employees** who have access to our products or services. 
+    - Leveraging this positive sentiment can contribute to a **positive work environment** and potentially boost employee **engagement and productivity**.
+    - Engagement in survey reponses is **highest in the architecture industry**.
+    - **Geo_1** has **the highest NPS**, indicating a higher level of **customer loyalty and satisfaction** compared to the other locations.
+- Improvements:
+    - The majority of respondents are **unique customers** with an **unknown industry**. Investigate to identify these industries. 
+    - Improve survey participation and engagement, especially in **construction and product design industries**.
+    - **Geo_3** has **the lowest NPS**, suggesting there is room for improvement in **customer sentiment** in this area.
+    -  An **overall NPS of 35 out of 100** shows signs of improvement to be made in the **product/process/company**.
+    - We can **leverage NPS tables** to facilitate in-depth **analysis** by exploring **NPS scores** alongside specific customer attributes, gaining insights into **customer feedback** and **loyalty** based on different dimensions.
 
-1. Document Goals
-2. Definition of the KPI
-    2.1 Metric Details
-    2.2 NPS Definition
-3. KPI Business Use Cases
-    3.1 Key Insights
-4. Required KPI Data Sources
-    4.1 Metric Granularity
-    4.2 Segments (Dimensions /Filters / Slicers)
-    4.3 Caveats & Clarifications
-    4.4 Known Issues
-5. Data Processing Details
-6. Sample SQL Queries
-    6.1 Use Case 1 - To fetch non-EBA Qualtrics IDs per fiscal year
-    6.2 Use Case 2 - To fetch Qualtrics IDs (EBA and non-EBA) per industry
-    6.3 Use Case 3 - To fetch EBA Qualtrics IDs per GEO
-    6.4 Use Case 4 - To calculate overall NPS (EBA and non-EBA)
-    6.5 Use Case 5 - To calculate EBA NPS
-    6.6 Use Case 6 - To connect NPS table with applicable dimensions
-7. Report / Data for Reconciliation
-8. Check List for Metric Owner
-9. Governance
-10. Data Quality & Monitoring
-    10.1 Known Data Quality Issues
-    10.2 Data Quality Checks
-    10.3 Inventory of Downstream Users
+    # 1.1 KPI Business Use Cases
+- Tracking NPS allows us to see how much our customers would recommend our product/service/the company to someone else
+- We can track this KPI over periods of time and determine whether customer satisfaction with the product/service is improving or declining
+- We can leverage this information to enhance our service and identify strengths for further improvement
 
-# 1. Document Goals
-   - Explain how the Key Performance Indicator (KPI) Net Promotor Score is calculated using SQL
-   - Communicate a high-level understanding of the metric and how it can be used for leadership and director-levels 
-   - Document the process for technical analysts to understand how to use the data/calculate the KPI as well as the appropriate business context to apply it
+# 1.2. Document Goals
+   - Summarize NPS significance for leadership
+   - Document usage and calculation for analysts
+   - Describe SQL-based Net Promoter Score (NPS) calculation
 
 # 2. Definition of the KPI
 
@@ -75,33 +49,14 @@ NPS stands for Net Promoter Score, a metric used in customer experience programm
 ![Total_Qualtrics_ID vs Fiscal_Year](https://res.cloudinary.com/dffvrw1wk/image/upload/v1690790058/nps_rrarle.jpg)
 
 
-# 3. KPI Business Use Cases
-- Tracking NPS allows us to see how much our customers would recommend our product/service/the company to someone else
-- We can track this KPI over periods of time and determine whether customer satisfaction with the product/service is improving or declining
-- We can leverage this information to enhance our service and identify strengths for further improvement
-
-## 3.1 Key Insights
- - Achievements:
-    - The total number of **survey responses** have **increased** year on year since 2020 from **35 to over 100** in 2023. This is a **positive** result and an **investigation** as to what is working successfully can drive **further results**.
-    -  The **overall EBA NPS** of **60** indicates a **highly positive sentiment** among **employees** who have access to our products or services. 
-    - Leveraging this positive sentiment can contribute to a **positive work environment** and potentially boost employee **engagement and productivity**.
-    - Engagement in survey reponses is **highest in the architecture industry**.
-    - **Geo_1** has **the highest NPS**, indicating a higher level of **customer loyalty and satisfaction** compared to the other locations.
-- Improvements:
-    - The majority of respondents are **unique customers** with an **unknown industry**. Investigate to identify these industries. 
-    - Improve survey participation and engagement, especially in **construction and product design industries**.
-    - **Geo_3** has **the lowest NPS**, suggesting there is room for improvement in **customer sentiment** in this area.
-    -  An **overall NPS of 35 out of 100** shows signs of improvement to be made in the **product/process/company**.
-    - We can **leverage NPS tables** to facilitate in-depth **analysis** by exploring **NPS scores** alongside specific customer attributes, gaining insights into **customer feedback** and **loyalty** based on different dimensions.
-
-# 4. Required KPI Data Sources
+# 3. Required KPI Data Sources
 
 
-## 4.1 Metric Granularity
+Metric Granularity:
 
 - Qualtrics_ID
 
-## 4.2 Segments (Dimensions /Filters / Slicers)
+## 3.1 Segments (Dimensions /Filters / Slicers)
 1. Country
 2. Customer Size
 3. Customer Tenure
@@ -113,7 +68,7 @@ NPS stands for Net Promoter Score, a metric used in customer experience programm
 9. Customer Tenure
 10. Premium ( WIP)
 
-## 4.3 Caveats & Clarifications
+## 3.2 Caveats & Clarifications
 
 
 1. **Not all Qualtrics_id have an account_csn, hence not all qualtrics_id will have an account_name**
@@ -150,10 +105,10 @@ NPS stands for Net Promoter Score, a metric used in customer experience programm
 
    - This approach helps maintain data clarity and reliability, standardizing the data to 'UNKNOWN' for ambiguous survey responses with multiple possible mappings to different customer accounts or information. It ensures consistent handling during analysis and reporting.
 
-## 4.5 Known Issues
+## 3.4 Known Issues
 The metric knowledge is being consolidated, gathering inputs from various experts to ensure a comprehensive understanding and informed decision-making based on combined expertise of the SMEs.
 
-## 5. Data Processing Details
+## 4. Data Processing Details
 
 **How to Find the Table(s):**
 1. Go to the Data Warehouse.
@@ -177,8 +132,8 @@ The metric knowledge is being consolidated, gathering inputs from various expert
 | X_PUBLISH | ENGAGEMENT_SHARED | NPS_NON_X_KEY_DRIVER_PRODUCTS | X _RO_GROUP | Not Applicable |
 | X_PUBLISH | ENGAGEMENT_SHARED | NPS_PRODUCTS_ENGMNT | X _RO_GROUP | Not Applicable |
 
-# 6. Sample SQL Queries
-## 6.1 Use Case 1
+# 5. Sample SQL Queries
+## 5.1 Use Case 1
 ### *_To fetch non-EBA Qualtrics IDs per fiscal year_*
 SQL query:
 
@@ -197,7 +152,6 @@ SQL query:
 | 2021 | 50 |
 | 2020 | 35 |
 
-  Here is the data in bar chart format:
 ![Total_Qualtrics_ID vs Fiscal_Year](https://res.cloudinary.com/dffvrw1wk/image/upload/v1690742152/002_fgcmpv.jpg)
 
 #### Table Summary
@@ -206,7 +160,7 @@ The query helps identify the number of survey responses (Qualtrics IDs) submitte
 #### Table Results
 The total number of survey responses (Qualtrics IDs) have increased year on year since 2020 from 35 to over 100 responses in 2023.
 
-## 6.2 Use Case 2
+## 5.2 Use Case 2
 ### *To fetch Qualtrics IDs (EBA and non-EBA) per industry*
 SQL query:
 
@@ -223,7 +177,7 @@ SQL query:
 | ARCHITECTURE | 1250 | 1500 |
 | PRODUCT DESIGN | 900 | 1800 |
 
- Here is the data in bar chart format:
+
 ![Total_Qualtrics_ID vs Fiscal_Year](https://res.cloudinary.com/dffvrw1wk/image/upload/v1690742564/003_gnaube.jpg)
 
 #### Table Summary
@@ -232,7 +186,7 @@ The query helps identify the number of survey responses (Qualtrics IDs) and the 
 #### Table Results
 Engagement and feedback vary by industry. The majority of respondents are unique customers with an unknown industry. Investigate to identify these industries. Improve survey participation and engagement, especially in construction and product design industries.
 
-## 6.3 Use Case 3
+## 5.3 Use Case 3
 ### *To fetch EBA Qualtrics IDs per GEO*
 SQL query:
 
@@ -259,8 +213,8 @@ SQL query:
 | Geo_2 | 850 | 400 | 70 | 330 |
 | Geo_3 | 500 | 250 | 50 | 200 |
 
-Here is the data in bar chart format:
-![Total_Qualtrics_ID vs Fiscal_Year](https://res.cloudinary.com/dffvrw1wk/image/upload/v1690743312/004_zq4bg9.jpg)
+
+
 
 
 
@@ -281,7 +235,7 @@ Each row in the table represents a different GEO category, and the corresponding
 Overall, Geo_1 has the highest NPS, indicating a higher level of customer loyalty and satisfaction compared to the other locations. Geo_3 has the lowest NPS, suggesting there is room for improvement in customer sentiment in this area.
 
 
-## 6.4 Use Case 4
+## 5.4 Use Case 4
 ### *To calculate overall NPS (EBA and non-EBA)*
 SQL query:
 
@@ -314,7 +268,7 @@ SQL query:
 #### Table result
 An NPS (Net Promoter Score) of 35 means that the overall sentiment of customers towards a company, product, or service is positive but has room for improvement. The NPS is measured on a scale from -100 to +100. It shows that there are more promoters than detractors, but there is still room for improvement to further increase customer satisfaction and loyalty.
 
-## 6.5 Use Case 5
+## 5.5 Use Case 5
 ### *To calculate EBA NPS*
 SQL query:
 
@@ -349,7 +303,7 @@ SQL query:
 - An overall EBA (Employee-Based Access) NPS (Net Promoter Score) of 60 means that the sentiment of employees who have access to a company's products or services is highly positive. 
 - It indicates that a significant majority of employees who have access to the company's products or services are promoters. This suggests a high level of employee satisfaction and loyalty, which is beneficial for the company as it indicates a positive work environment and can lead to higher employee engagement and productivity.
 
-## 6.6 Use Case 6
+## 5.6 Use Case 6
 ### *To connect NPS table with applicable dimensions*
 SQL query:
 
@@ -392,7 +346,7 @@ SQL query:
 #### Table Result
 We can leverage NPS tables to facilitate in-depth analysis by exploring NPS scores alongside specific customer attributes, gaining insights into customer feedback and loyalty based on different dimensions.
 
-## 7. Report / Data for Reconciliation
+## 6. Report / Data for Reconciliation
 - Sales Transactions
 - Software Modules
 - Software Product Updates
@@ -401,7 +355,7 @@ We can leverage NPS tables to facilitate in-depth analysis by exploring NPS scor
 - Customer support tickets
 
 
-## 8. Metric Owner Check List
+## 7. Metric Owner Check List
 | ID | Item | Comments |
 | ------ | ------ | ------ |
 | 1 | Is the metric defined and used consistently across ADSK? | Based on the fact of having multiple SME's for this metric, this needs to be checked and agreed upon for a standardised approach going forward  |
@@ -413,20 +367,20 @@ We can leverage NPS tables to facilitate in-depth analysis by exploring NPS scor
 | 7 | Do you have a process for proactively communicating changes and known issues? |Yes, there is a process in place to proactively communicate any changes to the metric's definition or data sources, as well as any known issues that may impact its accuracy or availability.  |
 | 8 | Have you considered impacts to external parties such as partners/customers? | Yes, potential impacts on external parties, including partners and customers, have been taken into account to ensure that the metric's results are relevant and reliable for all stakeholders. |
 
-## 9. Governance
+## 8. Governance
 This is for any version updates to how the metric is defined.
 | Version | Start date | End date | Description of Change/Update | Comments |
 | ------ | ------ | ------ | ------ | ------ |
 | 1.0 | 06 Feb 2023 | 30 July 2023 | Metric documentation available through KPI Simplification Initiative.| This metric was available prior to this start date, but the date reflects when this logic documentation was created for KPI Simplification.|
 | 2.0| 31 July 2023 | - | Introduced robust workflow for metric calculation. | Updated how the metric is calculated to enhance the accuracy of the NPS metric.
-# 10. Data Quality & Monitoring
-## 10.1 Known Data Quality Issues
+# 9. Data Quality & Monitoring
+## 10. Known Data Quality Issues
 1. Not all Qualtrics_id have an account_csn, hence not all qualtrics_id will have an account_name
 2. For ADSK_BUSINESS_SCORE the NPS threshold is unusual, it's FY21_ADSK_BUSINESS_SCORE >= 6 THEN 'PROMOTER' WHEN
 FY21_ADSK_BUSINESS_SCORE <= 3 THEN 'DETRACTOR' for all others when SCORE <= 3 then Detractor and
 SCORE >= 9 then Promoter
 3. As of 31/07/2023, About 1850 qualtrics_id have multiple ACCOUNT_CSN mapped to them, some of these CSN's have either have multiple ACCOUNT_NAME, INDUSTRY & GEO or multiple values in one of these filters, so in order to ensure consistency, any qualtrics_id with multiple ACCOUNT_CSN will have ACCOUNT_NAME, INDUSTRY and GEO set to 'UNKNOWN'
-## 10.2 Data Quality Checks
+## 10.1 Data Quality Checks
 - Unique fields
     - QUALTRICS_ID
 - Not null fields:
@@ -448,7 +402,7 @@ SCORE >= 9 then Promoter
 | SME_ACCESS_SCORE | 11 | 0 |
 | SCORE | 11 | 0 |
 
-## 10.3 Inventory of Downstream Users
+## 10.2 Inventory of Downstream Users
 | Report / Process Title | Report / Process Description | Link to More Details | Consumers |
 | ------ | ------ | ------ | ------ |
 | NPS dashboard | This is a tool to check how likely customers are on recommending Autodesk, or in other words, how happy they are with Autodesk at the moment or historically depending on the amount of replied surveys. | [Link](https://www.autodesk.eu/) | CSM (Customer Success Management) team & SP (Sales and Product) organizations |
